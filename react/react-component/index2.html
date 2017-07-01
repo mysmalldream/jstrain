@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React组件传参</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="babel.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+        class MyTitle extends React.Component{
+            render(){
+                return <h1 style={{color: this.props.color}}>Hello World!</h1>
+            }
+        };
+
+        ReactDOM.render(
+            <MyTitle color="yellow"/>,
+            document.getElementById('example')
+        );
+    </script>
+</body>
+</html>
