@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+    <script type="text/babel">
+        var Counter=React.createClass({
+            getInitialState:function(){
+                return {count:0};
+            },
+
+            add:function(){
+                var count=this.state.count+1;
+
+                this.setState({
+                    count:count
+                });
+            },
+
+            subtract:function(){
+                var count=this.state.count-1;
+
+                this.setState({
+                    count:count
+                });
+            },
+
+            render:function(){
+                return (
+                    <div>
+                        <h1>Counter:{this.state.count}</h1>
+                        <button onClick={this.add}>+1</button>
+                        <button onClick={this.subtract}>-1</button>
+                    </div>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <Counter/>,
+            document.body
+        );
+    </script>
+</body>
+</html>
