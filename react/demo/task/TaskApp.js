@@ -26,7 +26,7 @@ var TaskApp=React.createClass({
     },
     
     render:function(){
-        return {
+        return (
             <div>
                 <h1>My Tasks</h1>
                 <TaskList items={this.state.items} /> 
@@ -36,7 +36,7 @@ var TaskApp=React.createClass({
                     <button>Add</button>
                 </from>
             </div>
-        };
+        );
     }
 });
 
