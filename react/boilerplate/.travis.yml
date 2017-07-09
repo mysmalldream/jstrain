@@ -1,7 +1,6 @@
+# running on container-based infrastructure
+sudo: false
+
 language: node_js
-
 node_js:
-  - 7
-  - 6
-
-cache: yarn
+  - "node"
