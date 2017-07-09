@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React组件children属性</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="babel.min.js"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+        var NoteList =React.createClass({
+            render:function () {
+                return (
+                    <ol>
+                    {
+                        React.Children.map(this.props.children,function (child) {
+                            return <li>{child}</li>;
+                        })
+                    }
+                    </ol>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <NoteList>
+                <span>Hello</span>
+                <span>world</span>
+            </NoteList>,
+            document.getElementById('example')
+        );
+    </script>
+</body>
+
+</html>
