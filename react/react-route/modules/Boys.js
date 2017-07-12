@@ -8,6 +8,9 @@ export default React.createClass({
   },
 
   handleSubmit(event){
+    event.preventDefault();
+    const boyName=event.target.elements[0].value;
+    const path=`/boys/${boyName}`;
     this.context.router.push(path)
   },
 
